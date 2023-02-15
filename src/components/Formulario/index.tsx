@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { IEvento } from '../../interfaces/IEvento';
-import { obterId } from '../../utils';
-import style from './Formulario.module.scss';
 import { useSetRecoilState } from 'recoil';
+import { IEvento } from '../../interfaces/IEvento';
 import { listaDeEventosState } from '../../state/atom';
+import { obterId } from '../../util';
+import style from './Formulario.module.scss';
 
-const Formulario: React.FC= () => {
+const Formulario: React.FC = () => {
 
-  const setListaEventos = useSetRecoilState<IEvento[]>(listaDeEventosState)
+  const setListaDeEventos = useSetRecoilState<IEvento[]>(listaDeEventosState)
 
   const [descricao, setDescricao] = useState('')
   const [dataInicio, setDataInicio] = useState('')
@@ -29,7 +29,7 @@ const Formulario: React.FC= () => {
       fim: montarData(dataFim, horaFim),
       completo: false
     }
-    setListaEventos(lsitaAntiga => [...lsitaAntiga, evento])
+    setListaDeEventos(listaAntiga => [...listaAntiga, evento])
     setDescricao('')
     setDataInicio('')
     setHoraInicio('')
