@@ -15,7 +15,7 @@ function App() {
           </Card>
           <hr />
           <Card>
-            <ListaDeEventos/>
+            <ListaDeEventos />
           </Card>
         </div>
         <div className={style.Coluna}>
